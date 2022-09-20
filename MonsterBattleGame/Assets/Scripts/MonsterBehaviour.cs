@@ -32,10 +32,18 @@ public class MonsterBehaviour : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        Debug.Log("wall!");
-        if (collision.gameObject.tag == "monster wall")
+        Vector3 hitPos = collision.bounds.ClosestPoint(transform.position);
+        if(hitPos.x != transform.position.x)
         {
-            Debug.Log("wall!");
+            Debug.Log("right");
+            dir.x = -dir.x;
         }
+
+        if (hitPos.y != transform.position.y)
+        {
+            Debug.Log("up");
+            dir.y = -dir.y;
+        }
+
     }
 }
