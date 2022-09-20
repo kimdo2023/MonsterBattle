@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class MonsterBehaviour : MonoBehaviour
 {
-    Vector2 dir;
+    public Vector2 dir;
 
     public float speed;
 
@@ -15,7 +15,6 @@ public class MonsterBehaviour : MonoBehaviour
     {
         counter = 0;
     }
-
 
     void FixedUpdate()
     {
@@ -33,7 +32,7 @@ public class MonsterBehaviour : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D collision)
     {
         Vector3 hitPos = collision.bounds.ClosestPoint(transform.position);
-        if(hitPos.x != transform.position.x)
+        if (hitPos.x != transform.position.x)
         {
             Debug.Log("right");
             dir.x = -dir.x;
