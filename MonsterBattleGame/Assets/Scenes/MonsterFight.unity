@@ -123,6 +123,37 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &11851902
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 11851903}
+  m_Layer: 0
+  m_Name: Sword Right
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &11851903
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 11851902}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.19, y: -0.106406145, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1786377210}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &109265685 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 6269337140819515439, guid: ad383f4141cd4184b8dc8c381fbb096a, type: 3}
@@ -4476,6 +4507,37 @@ MonoBehaviour:
   Fire: {fileID: 9135229482077131030, guid: 8d528d7b95d484bf5996caf45f39ec34, type: 3}
   SpawnRange: {x: 10, y: 10}
   FireNumber: 10
+--- !u!1 &989588638
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 989588639}
+  m_Layer: 0
+  m_Name: Sword Left
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &989588639
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 989588638}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.19, y: -0.106406145, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1786377210}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1091012256
 GameObject:
   m_ObjectHideFlags: 0
@@ -4754,6 +4816,14 @@ PrefabInstance:
       propertyPath: m_Controller
       value: 
       objectReference: {fileID: 9100000, guid: 307bf2cbcb6344013a170346179085a9, type: 2}
+    - target: {fileID: 2388848735908806783, guid: 3134d2862c1af4398a2c7431f83ad188, type: 3}
+      propertyPath: LEFT
+      value: 
+      objectReference: {fileID: 989588638}
+    - target: {fileID: 2388848735908806783, guid: 3134d2862c1af4398a2c7431f83ad188, type: 3}
+      propertyPath: RIGHT
+      value: 
+      objectReference: {fileID: 11851902}
     - target: {fileID: 2459807923690814581, guid: 3134d2862c1af4398a2c7431f83ad188, type: 3}
       propertyPath: m_FlipX
       value: 1
