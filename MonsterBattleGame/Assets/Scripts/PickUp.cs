@@ -6,20 +6,24 @@ public class PickUp : MonoBehaviour
 {
     public Transform holdSpot;
     public LayerMask pickUpMask;
+    public Shoot shoot;
     public Vector3 Direction { get; set; }
     private GameObject itemHolding;
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.E))
+        if (Input.GetMouseButtonDown(1))
         {
             if (itemHolding)
             {
-                itemHolding.transform.position = transform.position + Direction;
-                itemHolding.transform.parent = null;
-                if (itemHolding.GetComponent<Rigidbody2D>())
-                    itemHolding.GetComponent<Rigidbody2D>().simulated = true;
-                itemHolding = null;
+                //itemholding.transform.position = transform.position + direction;
+                //itemholding.transform.parent = null;
+                //if (itemholding.getcomponent<rigidbody2d>())
+                //    itemholding.getcomponent<rigidbody2d>().simulated = true;
+                //itemholding = null;
+                Destroy(itemHolding);
+                bool flipX = GetComponent<SpriteRenderer>().flipX;
+                shoot.ShootFire(flipX);
             }
             else
             {
@@ -35,14 +39,14 @@ public class PickUp : MonoBehaviour
             }
 
         }
-        if (Input.GetKeyDown(KeyCode.Q))
-        {
-            if (itemHolding)
-            {
-                StartCoroutine(ThrowItem(itemHolding));
-                itemHolding = null;
-            }
-        }
+        //if (Input.GetKeyDown(KeyCode.Q))
+        //{
+        //    if (itemHolding)
+        //    {
+        //        StartCoroutine(ThrowItem(itemHolding));
+        //        itemHolding = null;
+        //    }
+        //}
     }
 
     IEnumerator ThrowItem(GameObject item)

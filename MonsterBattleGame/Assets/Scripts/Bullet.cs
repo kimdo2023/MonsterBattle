@@ -21,4 +21,28 @@ public class Bullet : MonoBehaviour
         else
         rb2d.velocity = Vector2.left * speed;
     }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if(collision.gameObject.tag == "Chunk")
+        {
+
+            var q = collision.GetComponent<Core>();
+            if(q == null)
+            {
+                collision.GetComponent<ChunkBehaviour>().Destroy();
+                Destroy(gameObject);
+            }
+            else
+            {
+                if(q.HP == 0)
+                {
+                    print("?");
+                    Destroy(collision);
+                    Destroy(gameObject);
+                }
+            }    
+
+        }
+    }
 }

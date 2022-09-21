@@ -48,10 +48,10 @@ public class SwordAttack : MonoBehaviour
         //Debug.Log("Hello1");
         if (other.gameObject.tag == "Enemy") 
         {
-            Debug.Log("Hello1");
+            //Debug.Log("Hello1");
             var scpt = other.gameObject.GetComponentInChildren<Core>();
             if(scpt!=null)
-                Debug.Log("Hello2");
+                //Debug.Log("Hello2");
             scpt.LaunchAChunk();
         }
         

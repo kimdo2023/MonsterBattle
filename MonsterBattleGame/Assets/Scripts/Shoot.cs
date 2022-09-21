@@ -4,19 +4,25 @@ using UnityEngine;
 
 public class Shoot : MonoBehaviour
 {
-    public Transform muzzle;
+    public Transform muzzle_L;
+    public Transform muzzle_R;
     public GameObject bullet;
 
-    void Update()
+    public void ShootFire(bool flipX)
     {
-        if(Input.GetKeyDown(KeyCode.F))
+
+        if(flipX)
         {
-            var b = Instantiate(bullet, muzzle.position, Quaternion.identity);
+            var b = Instantiate(bullet, muzzle_L.position, Quaternion.identity);
             var Bscpt = b.GetComponent<Bullet>();
-            //if(condition a)
-            //    Bscpt.LR = true;
-            //else
-            //    Bscpt.LR = false;
+            Bscpt.LR = false;
         }
+        else
+        {
+            var b = Instantiate(bullet, muzzle_R.position, Quaternion.identity);
+            var Bscpt = b.GetComponent<Bullet>();
+            Bscpt.LR = true;
+        }
+
     }
 }

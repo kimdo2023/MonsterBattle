@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 2459807923690814581}
   - component: {fileID: 5294858499303172115}
   - component: {fileID: 6968802578495660707}
+  - component: {fileID: 7027460557087860305}
   - component: {fileID: 8124416561207213872}
   - component: {fileID: 2878318797261501843}
   - component: {fileID: -3401341619709565355}
@@ -151,6 +152,20 @@ MonoBehaviour:
     minNormalAngle: 0
     maxNormalAngle: 0
   swordAttack: {fileID: 2388848735908806783}
+--- !u!114 &7027460557087860305
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5672324327417413082}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2ed8f2a22e0ea4947958c46d55165459, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  muzzle: {fileID: 0}
+  bullet: {fileID: 977536944225229918, guid: 28734be139f91344e91b8901a72d610e, type: 3}
 --- !u!50 &8124416561207213872
 Rigidbody2D:
   serializedVersion: 4
