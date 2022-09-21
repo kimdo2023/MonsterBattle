@@ -16,25 +16,25 @@ public class MoveDetector : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        Debug.Log("hit");
+        //Debug.Log("hit");
         if(collision.gameObject.tag == "monster wall")
         {
             switch (direction)
             {
                 case Direction.W:
-                    Debug.Log("W");
+                    //Debug.Log("W");
                     MBScpt.dir.x = -MBScpt.dir.x;
                     break;
                 case Direction.E:
-                    Debug.Log("E");
+                    //Debug.Log("E");
                     MBScpt.dir.x = -MBScpt.dir.x;
                     break;
                 case Direction.N:
-                    Debug.Log("N");
+                    //Debug.Log("N");
                     MBScpt.dir.y = -MBScpt.dir.y;
                     break;
                 case Direction.S:
-                    Debug.Log("S");
+                    //Debug.Log("S");
                     MBScpt.dir.y = -MBScpt.dir.y;
                     break;
             }
