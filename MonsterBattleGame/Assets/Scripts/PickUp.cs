@@ -6,7 +6,6 @@ public class PickUp : MonoBehaviour
 {
     public Transform holdSpot;
     public LayerMask pickUpMask;
-    public GameObject destroyEffect;
     public Vector3 Direction { get; set; }
     private GameObject itemHolding;
 
@@ -56,10 +55,17 @@ public class PickUp : MonoBehaviour
             item.transform.position = Vector3.Lerp(startPoint, endPoint, i * .04f);
             yield return null;
         }
-        if (item.GetComponent<Rigidbody2D>())
+        if (item.GetComponent<Rigidbody2D>()) {
             item.GetComponent<Rigidbody2D>().simulated = true;
-        Instantiate(destroyEffect, item.transform.position, Quaternion.identity);
+        }
         Destroy(item);
     }
+    // private void OnTriggerEnter2D(Collider2D other) 
+    // {
+    //     if(other.gameObject.tag == "Chunk") 
+    //     {
+    //         Destroy(gameObject);
+    //     }
+    // }
 
 }
