@@ -1,30 +1,44 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class GrabObject : MonoBehaviour
 {
-    public Transform grabDetect;
-    public Transform boxHolder;
-    public float rayDist;
+    [SerializeField]
+    private Transform grabPoint;
+    [SerializeField]
+    private Transform rayPoint;
+    [SerializeField]
+    private float rayDistance;
+
+    private GameObject grabbedObject;
+    private int layerIndex;
+
+    private void Start() {
+        layerIndex = LayerMask.NameToLayer("Objects");
+    }
 
     // Update is called once per frame
     void Update()
     {
-        RaycastHit2D grabCheck = Physics2D.Raycast(grabDetect.position, Vector2.right * transform.localScale, rayDist);
-        if(grabCheck.collider != null && grabCheck.collider.tag == "Fire")
+        RaycastHit2D hitInfo = Physics2D.Raycast(rayPoint.position, transform.right, rayDistance);
+        if(hitInfo.collider!=null && hitInfo.collider.gameObject.layer == layerIndex)
         {
-            if (Input.GetKeyDown(KeyCode.E))
+            if(Keyboard.current.spaceKey.wasPressedThisFrame && grabbedObject == null)
             {
-                grabCheck.collider.gameObject.transform.parent = boxHolder;
-                grabCheck.collider.gameObject.transform.position = boxHolder.position;
-                grabCheck.collider.gameObject.GetComponent<Rigidbody2D>().isKinematic = true;
+                grabbedObject = hitInfo.collider.gameObject;
+                grabbedObject.GetComponent<Rigidbody2D>().isKinematic = true;
+                grabbedObject.transform.position = grabPoint.position;
+                grabbedObject.transform.SetParent(transform);
             }
-            else 
+            else if (Keyboard.current.spaceKey.wasPressedThisFrame)
             {
-                grabCheck.collider.gameObject.transform.parent = null;
-                grabCheck.collider.gameObject.GetComponent<Rigidbody2D>().isKinematic = false;
+                grabbedObject.GetComponent<Rigidbody2D>().isKinematic = false;
+                grabbedObject.transform.SetParent(null);
+                grabbedObject = null;
             }
         }
+        Debug.DrawRay(rayPoint.position, transform.right * rayDistance);
     }
 }

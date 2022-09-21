@@ -17,6 +17,7 @@ GameObject:
   - component: {fileID: -3401341619709565355}
   - component: {fileID: 9175592143563530514}
   - component: {fileID: 4923653112245916914}
+  - component: {fileID: 3067811306170547466}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -321,14 +322,31 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5672324327417413082}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 66bd224d1e2b64df29e27037f77523d8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  grabDetect: {fileID: 0}
-  boxHolder: {fileID: 0}
-  rayDist: 2
+  grabPoint: {fileID: 0}
+  rayPoint: {fileID: 0}
+  rayDistance: 0
+--- !u!114 &3067811306170547466
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5672324327417413082}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d9c240caad46f47c6afc39084ab80ff6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  holdSpot: {fileID: 0}
+  pickUpMask:
+    serializedVersion: 2
+    m_Bits: 0
+  destroyEffect: {fileID: 0}
 --- !u!1 &6795547836543932635
 GameObject:
   m_ObjectHideFlags: 0
@@ -402,3 +420,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   swordCollider: {fileID: 5548156554608136394}
   damage: 3
+  LEFT: {fileID: 0}
+  RIGHT: {fileID: 0}
