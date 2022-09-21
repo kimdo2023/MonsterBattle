@@ -32,7 +32,7 @@ public class PlayerController : MonoBehaviour
         if(Input.GetMouseButtonDown(0) == true)
         {
             GetComponent<AudioSource>().Play();
-            Debug.Log("Press button");
+            //Debug.Log("Press button");
         } 
         // If the left mouse button is released...
         if(Input.GetMouseButtonUp(0) == true)

@@ -26,14 +26,17 @@ public class SwordAttack : MonoBehaviour
         swordCollider.enabled = false;
     }
 
-    private void OnTriggerEnter2D(Collider2D other) {
-        if(other.tag == "Enemy") {
-            // Deal damage to the enemy
-            Enemy enemy = other.GetComponent<Enemy>();
-
-            if(enemy != null) {
-                enemy.Health -= damage;
-            }
+    private void OnTriggerEnter2D(Collider2D other) 
+    {
+        Debug.Log("Hello1");
+        if (other.gameObject.tag == "Enemy") 
+        {
+            Debug.Log("Hello1");
+            var scpt = other.gameObject.GetComponentInChildren<Core>();
+            if(scpt!=null)
+                Debug.Log("Hello2");
+            scpt.LaunchAChunk();
         }
+        
     }
 }
