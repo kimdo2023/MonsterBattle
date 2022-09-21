@@ -29,20 +29,5 @@ public class MonsterBehaviour : MonoBehaviour
         transform.Translate(new Vector3(dir.x,dir.y,0)*speed*Time.deltaTime,Space.World);
     }
 
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-        Vector3 hitPos = collision.bounds.ClosestPoint(transform.position);
-        if (hitPos.x != transform.position.x)
-        {
-            Debug.Log("right");
-            dir.x = -dir.x;
-        }
 
-        if (hitPos.y != transform.position.y)
-        {
-            Debug.Log("up");
-            dir.y = -dir.y;
-        }
-
-    }
 }

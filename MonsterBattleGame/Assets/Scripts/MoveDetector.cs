@@ -16,6 +16,7 @@ public class MoveDetector : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
+        Debug.Log("hit");
         if(collision.gameObject.tag == "monster wall")
         {
             switch (direction)
