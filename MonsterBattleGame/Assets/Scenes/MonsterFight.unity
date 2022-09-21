@@ -4442,6 +4442,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 90
       objectReference: {fileID: 0}
+    - target: {fileID: 9015618031338296007, guid: 8d528d7b95d484bf5996caf45f39ec34, type: 3}
+      propertyPath: m_Simulated
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 9135229482077131030, guid: 8d528d7b95d484bf5996caf45f39ec34, type: 3}
       propertyPath: m_Name
       value: Fire
@@ -4770,6 +4774,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7461462511614828632, guid: 3134d2862c1af4398a2c7431f83ad188, type: 3}
       propertyPath: m_ConstrainProportionsScale
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8124416561207213872, guid: 3134d2862c1af4398a2c7431f83ad188, type: 3}
+      propertyPath: m_Simulated
       value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
