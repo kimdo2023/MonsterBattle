@@ -26,6 +26,20 @@ public class PlayerController : MonoBehaviour
         animator = GetComponent<Animator>();
         spriteRenderer = GetComponent<SpriteRenderer>();
     }
+    void Update()
+    { 
+        // If the left mouse button is pressed down...
+        if(Input.GetMouseButtonDown(0) == true)
+        {
+            GetComponent<AudioSource>().Play();
+            Debug.Log("Press button");
+        } 
+        // If the left mouse button is released...
+        if(Input.GetMouseButtonUp(0) == true)
+        {
+            GetComponent<AudioSource>().Stop();
+        }
+    }
 
     private void FixedUpdate() {
         if(canMove) {
