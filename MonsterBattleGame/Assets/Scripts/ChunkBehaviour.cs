@@ -6,6 +6,7 @@ public class ChunkBehaviour : MonoBehaviour
 {
     //monster body center
     public Transform core;
+    public Core Cscpt;
     public Transform anchor;
 
     //manually set time intervals
@@ -166,5 +167,15 @@ public class ChunkBehaviour : MonoBehaviour
             transform.SetParent(anchor, true);
             rb2D.simulated = false;
         }
+    }
+
+    public void Destroy()
+    {
+        Destroy(gameObject);
+    }
+
+    private void OnDestroy()
+    {
+        Cscpt.HP--;
     }
 }
